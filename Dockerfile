@@ -11,4 +11,7 @@ RUN apk add --no-cache docker \
 
 ADD jenkins-docker /usr/local/bin/jenkins-docker
 
+# This makes it compatible with Docker Pipeline Plugin
+VOLUME /home/jenkins/workspace
+
 ENTRYPOINT ["/usr/local/bin/jenkins-docker"]
