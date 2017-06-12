@@ -5,4 +5,4 @@ if [ "${DOCKER_GID}" != "" ]; then
     groupmod -g ${DOCKER_GID} docker
 fi
 
-exec sudo -u jenkins /usr/local/bin/jenkins-slave "${@}"
+exec sudo -u jenkins -E /usr/local/bin/jenkins-slave "${@}"
